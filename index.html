@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Single element Geometric Shapes  by Azik Samarkandiy</title>
+  <!--
+    Copyright (c) 2012 Azik Samarkandiy, http://codepen.io/html5web
+  -->
+<style>
+body{
+  background: #333;
+}
+.frame{
+  background: #fff;
+  width: 100px;
+  height: 100px;
+	padding: 60px; 
+	float: left;
+	display: inline;
+	margin: 5px;
+	box-shadow: 0 0 5px #000;
+}
+
+.frame:hover{
+	transform: scale(1.1);
+}
+
+.hexagon{
+	position: relative;
+}
+
+.hexagon:before{
+	content: "";
+	width: 50px;
+	height: 0;
+	position: absolute;
+	border-top: none;
+	border-bottom: solid 50px #000;
+	border-left: solid 30px transparent;
+	border-right: solid 30px transparent;
+}
+
+.hexagon:after{
+	content: "";
+	width: 50px;
+	height: 0;
+	position: absolute;
+	top: 50px;
+	border-top: solid 50px #000;
+	border-left: solid 30px transparent;
+	border-right: solid 30px transparent; 
+}
+
+.octagon{
+	width: 40px;
+	height: 0;
+	position: relative;
+	border-top: none;
+	border-bottom: solid 30px #000;
+	border-left: solid 30px transparent;
+	border-right: solid 30px transparent;
+	box-shadow: 0 15px 0 #000, 0 40px 0 #000;
+}
+
+.octagon:before{
+	content: "";
+	width: 40px;
+	height: 0;
+	position: absolute;
+	top: 70px;
+	left: -30px;
+	border-top: solid 30px #000;
+	border-left: solid 30px transparent;
+	border-right: solid 30px transparent;
+}
+
+.triangle{
+	width: 0;
+	height: 0;
+	border-bottom: solid 100px #000;
+	border-left: solid 60px transparent;
+	border-right: solid 60px transparent;
+
+}
+
+.triangle2{
+	width: 0;
+	height: 0;
+	border-bottom: solid 100px #000;
+	border-right: solid 100px transparent;
+}
+
+.triangle3{
+	width: 0;
+	height: 0;
+	position: relative;
+	border-bottom: solid 100px #000;
+	border-left: solid 60px transparent;
+	border-right: solid 60px transparent;
+}
+
+.triangle3:before{
+	content: "";
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 15px;
+	left: -45px;
+	border-bottom: solid 76px #fff;
+	border-left: solid 45px transparent;
+	border-right: solid 45px transparent;
+}
+
+.triangle4{
+	width: 0;
+	height: 0;
+	position: relative;
+	border-bottom: solid 100px #000;
+	border-right: solid 100px transparent;
+}
+
+.triangle4:before{
+	content: "";
+	width: 0;
+	height: 0;
+	position: absolute;
+	left: 10px;
+	top: 23px;
+	border-bottom: solid 67px #fff;
+	border-right: solid 67px transparent;
+}
+
+.triangle5{
+	width: 0;
+	height: 0;
+	border-top: solid 100px #000;
+	border-left: solid 60px transparent;
+	border-right: solid 60px transparent;
+}
+
+.triangle6{
+	width: 0;
+	height: 0;
+	border-right: solid 100px #000;
+	border-top: solid 60px transparent;
+	border-bottom: solid 60px transparent;
+}
+
+.triangle7{
+	width: 0;
+	height: 0;
+	border-left: solid 100px #000;
+	border-top: solid 60px transparent;
+	border-bottom: solid 60px transparent;
+}
+
+.square{
+	background: #000;
+	width: 100px;
+	height: 100px;
+}
+
+.square2{
+	background: #fff;
+	width: 80px;
+	height: 80px;
+	border: solid 10px #000;
+}
+
+.square3{
+	background: #000;
+	width: 100px;
+	height: 100px;
+	border-radius: 10px;
+}
+
+.square4{
+	background: #fff;
+	width: 80px;
+	height: 80px;
+	border: solid 10px #000;
+	border-radius: 10px;
+
+}
+
+.square5{
+	background: #fff;
+	width: 80px;
+	height: 80px;
+	border: dashed 10px #000;
+	border-radius: 10px;
+}
+
+.square6{
+	background: #fff;
+	width: 80px;
+	height: 80px;
+	border: dotted 10px #000;
+	border-radius: 10px;
+}
+
+.square7{
+	background: #fff;
+	width: 80px;
+	height: 80px;
+	border: double 10px #000;
+	border-radius: 10px;
+}
+
+.pentagon{
+	width: 0;
+	height: 0;
+	position: relative;
+	border-bottom: solid 46px #000;
+	border-left: solid 50px transparent;
+	border-right: solid 50px transparent;
+}
+
+.pentagon:after{
+	content: "";
+	width: 50px;
+	height: 0;
+	position: absolute;
+	top: 46px;
+	left: -50px;
+	border-top: solid 54px #000;
+	border-left: solid 25px transparent;
+	border-right: solid 25px transparent;
+}
+
+.circle{
+	background: #000;
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+}
+
+.circle2{
+	background: #fff;
+	width: 80px;
+	height: 80px;
+	border: solid 10px #000;
+	border-radius: 50px;
+}
+
+.circle3{
+	background: #fff;
+	width: 80px;
+	height: 80px;
+	border: dashed 10px #000;
+	border-radius: 50px;
+}
+
+.circle4{
+	background: #fff;
+	width: 80px;
+	height: 80px;
+	border: dotted 10px #000;
+	border-radius: 50px;
+}
+
+.circle5{
+	background: #fff;
+	width: 80px;
+	height: 80px;
+	border: double 10px #000;
+	border-radius: 50px;
+}
+
+.heart{
+	background: #000;
+	width: 55px;
+	height: 55px;
+	position: relative;
+	border-radius: 30px;
+}
+
+.heart:before{
+	background: #000;
+	content: "";
+	width: 55px;
+	height: 55px;
+	position: absolute;
+	left: 50px;
+	border-radius: 30px;
+}
+
+.heart:after{
+	content: "";
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 38px;
+	left: 1px;
+	border-top: solid 70px #000;
+	border-left: solid 51px transparent;
+	border-right: solid 52px transparent;
+}
+
+.star{
+	background: #000;
+	width: 80px;
+	height: 80px;
+	margin: 10px;
+	position: relative;
+}
+
+.star:before{
+	content: "";
+	background: #000;
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	transform: rotate(45deg);	
+}
+
+.star5{
+	background: #000;
+	width: 80px;
+	height: 80px;
+	margin: 10px;
+	position: relative;
+	border-radius: 20px;
+}
+
+.star5:before{
+	content: "";
+	background: #000;
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	border-radius: 20px;
+	transform: rotate(45deg);	
+}
+
+.star2{
+	background: #000;
+	width: 80px;
+	height: 80px;
+	margin: 10px;
+	position: relative;
+}
+
+.star2:before{
+	content: "";
+	background: #000;
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	transform: rotate(30deg);	
+}
+
+.star2:after{
+	content: "";
+	background: #000;
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	transform: rotate(60deg);	
+}
+
+.star11{
+	background: #fff;
+	width: 60px;
+	height: 60px;
+	border: double 10px #000;
+	margin: 10px;
+	position: relative;
+}
+
+.star11:before{
+	content: "";
+	background: transparent;
+	width: 60px;
+	height: 60px;
+	border: double 10px #000;
+	position: absolute;
+	left: -10px;
+	top: -10px;
+	transform: rotate(30deg);	
+}
+
+.star11:after{
+	content: "";
+	background: transparent;
+	width: 60px;
+	height: 60px;
+	border: double 10px #000;
+	position: absolute;
+	left: -10px;
+	top: -10px;
+	transform: rotate(60deg);	
+}
+
+.star12{
+	background: #fff;
+	width: 60px;
+	height: 60px;
+	border: solid 10px #000;
+	margin: 10px;
+	position: relative;
+}
+
+.star12:before{
+	content: "";
+	background: transparent;
+	width: 60px;
+	height: 60px;
+	border: solid 10px #000;
+	position: absolute;
+	left: -10px;
+	top: -10px;
+	transform: rotate(30deg);	
+}
+
+.star12:after{
+	content: "";
+	background: transparent;
+	width: 60px;
+	height: 60px;
+	border: solid 10px #000;
+	position: absolute;
+	left: -10px;
+	top: -10px;
+	transform: rotate(60deg);	
+}
+
+.star13{
+	background: #fff;
+	width: 60px;
+	height: 60px;
+	border: dotted 10px #000;
+	margin: 10px;
+	position: relative;
+}
+
+.star13:before{
+	content: "";
+	background: transparent;
+	width: 60px;
+	height: 60px;
+	border: dotted 10px #000;
+	position: absolute;
+	left: -10px;
+	top: -10px;
+	transform: rotate(30deg);	
+}
+
+.star13:after{
+	content: "";
+	background: transparent;
+	width: 60px;
+	height: 60px;
+	border: dotted 10px #000;
+	position: absolute;
+	left: -10px;
+	top: -10px;
+	transform: rotate(60deg);	
+}
+
+.star3{
+	background: transparent;
+	width: 60px;
+	height: 0;
+	position: relative;
+	margin-top: 30px;
+	border-top: solid 20px #000;
+	border-bottom: solid 20px #000;
+	border-left: solid 20px transparent;
+	border-right: solid 20px transparent; 
+}
+
+.star3:before{
+	content: "";
+	background: transparent;
+	width: 60px;
+	height: 0;
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	border-top: solid 20px #000;
+	border-bottom: solid 20px #000;
+	border-left: solid 20px transparent;
+	border-right: solid 20px transparent;
+	transform: rotate(90deg);
+}
+
+.star4{
+	width: 0;
+	height: 0;
+	position: relative;
+	border-bottom: solid 85px #000;
+	border-left: solid 50px transparent;
+	border-right: solid 50px transparent;
+}
+
+.star4:before{
+	content: "";
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 25px;
+	left: -50px;
+	border-top: solid 85px #000;
+	border-left: solid 50px transparent;
+	border-right: solid 50px transparent;
+}
+
+.star6{
+	background: #000;
+	width: 80px;
+	height: 80px;
+	margin: 10px;
+	position: relative;
+	border-radius: 15px;
+}
+
+.star6:before{
+	content: "";
+	background: #000;
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	border-radius: 15px;
+	transform: rotate(30deg);	
+}
+
+.star6:after{
+	content: "";
+	background: #000;
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	border-radius: 15px;
+	transform: rotate(60deg);	
+}
+
+.star7{
+	background: #fff;
+	width: 60px;
+	height: 60px;
+	margin: 10px;
+	border: solid 10px #000;
+	position: relative;
+}
+
+.star7:before{
+	content: "";
+	background: #fff;
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	border: solid 10px #000;
+	transform: rotate(45deg);	
+}
+
+.star7:after{
+	background: #fff;
+	content: "";
+	width: 60px;
+	height: 60px;
+	position: absolute;
+}
+
+.star8{
+	background: #fff;
+	width: 60px;
+	height: 60px;
+	margin: 10px;
+	border: dashed 10px #000;
+	position: relative;
+}
+
+.star8:before{
+	content: "";
+	background: transparent;
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	border: dashed 10px #000;
+	transform: rotate(45deg);	
+}
+
+.star9{
+	background: #fff;
+	width: 60px;
+	height: 60px;
+	margin: 10px;
+	border: dotted 10px #000;
+	position: relative;
+}
+
+.star9:before{
+	content: "";
+	background: transparent;
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	border: dotted 10px #000;
+	transform: rotate(45deg);	
+}
+
+.star10{
+	background: #fff;
+	width: 60px;
+	height: 60px;
+	margin: 10px;
+	border: double 10px #000;
+	position: relative;
+}
+
+.star10:before{
+	content: "";
+	background: transparent;
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	border: double 10px #000;
+	transform: rotate(45deg);	
+}
+
+.rhombus{
+	width: 0;
+	height: 0;
+	position: relative;
+	margin: -10px 0 0 10px;
+	border-bottom: solid 60px #000;
+	border-left: solid 40px transparent;
+	border-right: solid 40px transparent;
+}
+
+.rhombus:before{
+	content: "";
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 60px;
+	left: -40px;
+	border-top: solid 60px #000;
+	border-left: solid 40px transparent;
+	border-right: solid 40px transparent;
+}
+
+.plus{
+	background: #000;
+	width: 33px;
+	height: 100px;
+	position: relative;
+	margin-left: 33px;
+}
+
+.plus:before{
+	background: #000;
+	content: "";
+	width: 100px;
+	height: 33px;
+	position: absolute;
+	top: 33px;
+	left: -33px;
+}
+
+.plus2{
+	background: #000;
+	width: 33px;
+	height: 100px;
+	position: relative;
+	margin-left: 33px;
+	border-radius: 20px;
+}
+
+.plus2:before{
+	background: #000;
+	content: "";
+	width: 100px;
+	height: 33px;
+	position: absolute;
+	top: 33px;
+	left: -33px;
+	border-radius: 20px;
+}
+
+.iks{
+	background: #000;
+	width: 33px;
+	height: 100px;
+	position: relative;
+	margin-left: 33px;
+	transform: rotate(45deg);
+}
+
+.iks:before{
+	background: #000;
+	content: "";
+	width: 100px;
+	height: 33px;
+	position: absolute;
+	top: 33px;
+	left: -33px;
+}
+
+.iks2{
+	background: #000;
+	width: 33px;
+	height: 100px;
+	position: relative;
+	margin-left: 33px;
+	transform: rotate(45deg);
+	border-radius: 20px;
+}
+
+.iks2:before{
+	background: #000;
+	content: "";
+	width: 100px;
+	height: 33px;
+	position: absolute;
+	top: 33px;
+	left: -33px;
+	border-radius: 20px;
+}
+
+.semirounded{
+	background: #000;
+	width: 100px;
+	height: 100px;
+	border-radius: 0 50px 50px 0;
+}
+
+.semirounded2{
+	background: #000;
+	width: 100px;
+	height: 100px;
+	position: relative;
+	border-radius: 0 50px 50px 0;
+}
+
+.semirounded2:before{
+	background: #fff;
+	content: "";
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	border-radius: 0 50px 50px 0;
+}
+
+.parallelogram{
+	background: #000;
+	width: 120px;
+	height: 100px;
+	position: relative;
+	margin-left: -10px;
+	transform: skew(-15deg);
+}
+
+.parallelogram2{
+	background: #fff;
+	width: 100px;
+	height: 80px;
+	position: relative;
+	border: solid 10px #000;
+	margin-left: -10px;
+	transform: skew(-15deg);
+}
+
+.parallelogram3{
+	background: #fff;
+	width: 100px;
+	height: 80px;
+	position: relative;
+	border: dashed 10px #000;
+	margin-left: -10px;
+	transform: skew(-15deg);
+}
+
+.parallelogram4{
+	background: #fff;
+	width: 100px;
+	height: 80px;
+	position: relative;
+	border: dotted 10px #000;
+	margin-left: -10px;
+	transform: skew(-15deg);
+}
+
+.parallelogram5{
+	background: #fff;
+	width: 100px;
+	height: 80px;
+	position: relative;
+	border: double 10px #000;
+	margin-left: -10px;
+	transform: skew(-15deg);
+}
+
+.trapezium{
+	width: 70px;
+	height: 0;
+	border-bottom: solid 70px #000;
+	border-left: solid 30px transparent;
+	border-right: solid 30px transparent; 
+	position: relative;
+	margin: 15px 0 0 -10px; 
+}
+
+.trapezium2{
+	width: 70px;
+	height: 0;
+	border-bottom: solid 70px #000;
+	border-left: solid 30px transparent;
+	border-right: solid 30px transparent; 
+	position: relative;
+	margin: 15px 0 0 -10px; 
+}
+
+.trapezium2:before{
+	content: "";
+	width: 58px;
+	height: 0;
+	border-bottom: solid 50px #fff;
+	border-left: solid 20px transparent;
+	border-right: solid 20px transparent; 
+	position: absolute;
+	right: -14px;
+	top: 10px; 
+}
+
+.quartercircle{
+	background: #000;
+	width: 100px;
+	height: 100px;
+	border-radius: 0 0 0 100px;
+}
+
+.quartercircle2{
+	background: #000;
+	width: 100px;
+	height: 100px;
+	position: relative;
+	border-radius: 0 0 0 90px;
+}
+
+.quartercircle2:before{
+	content: "";
+	background: #fff;
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	border-radius: 0 0 0 110px;
+}
+
+.oval{
+	background: #000;
+	width: 100px;
+	height: 80px;
+	position: relative;
+	margin-top: 10px;
+	border-radius: 100%;
+}
+
+.pie{
+	width: 0;
+	height: 0;
+	border-radius: 50px;
+	border-top: solid 50px #000;
+	border-right: solid 50px transparent;
+	border-bottom: solid 50px #000;
+	border-left: solid 50px #000;
+}
+  </style>
+<script src="js/prefixfree.min.js"></script>
+</head>
+<body>
+<div class="frame">
+  <div class="star"></div>
+</div>
+<div class="frame">
+	<div class="star2"></div>
+</div>
+<div class="frame">
+	<div class="star11"></div>
+</div>
+<div class="frame">
+	<div class="star12"></div>
+</div>
+<div class="frame">
+	<div class="star13"></div>
+</div>
+<div class="frame">
+	<div class="star3"></div>
+</div>
+<div class="frame">
+	<div class="star4"></div>
+</div>
+<div class="frame">
+	<div class="star5"></div>
+</div>
+<div class="frame">
+	<div class="star6"></div>
+</div>
+<div class="frame">
+	<div class="star7"></div>
+</div>
+<div class="frame">
+	<div class="star8"></div>
+</div>
+<div class="frame">
+	<div class="star9"></div>
+</div>
+<div class="frame">
+	<div class="star10"></div>
+</div>
+<div class="frame">
+	<div class="triangle3"></div>
+</div>
+<div class="frame">
+	<div class="quartercircle"></div>
+</div>
+<div class="frame">
+	<div class="quartercircle2"></div>
+</div>
+<div class="frame">
+	<div class="pie"></div>
+</div>
+<div class="frame">
+	<div class="oval"></div>
+</div>
+<div class="frame">
+	<div class="trapezium"></div>
+</div>
+<div class="frame">
+	<div class="trapezium2"></div>
+</div>
+<div class="frame">
+	<div class="triangle2"></div>
+</div>
+<div class="frame">
+	<div class="triangle4"></div>
+</div>
+<div class="frame">
+	<div class="semirounded"></div>
+</div>
+<div class="frame">
+	<div class="semirounded2"></div>
+</div>
+<div class="frame">
+	<div class="parallelogram"></div>
+</div>
+<div class="frame">
+	<div class="parallelogram2"></div>
+</div>
+<div class="frame">
+	<div class="parallelogram3"></div>
+</div>
+<div class="frame">
+	<div class="parallelogram4"></div>
+</div>
+<div class="frame">
+	<div class="parallelogram5"></div>
+</div>
+<div class="frame">
+	<div class="plus"></div>
+</div>
+<div class="frame">
+	<div class="plus2"></div>
+</div>
+<div class="frame">
+	<div class="iks"></div>
+</div>
+<div class="frame">
+	<div class="iks2"></div>
+</div>
+<div class="frame">
+	<div class="rhombus"></div>
+</div>
+<div class="frame">
+	<div class="heart"></div>
+</div>
+<div class="frame">
+	<div class="triangle"></div>
+</div>
+<div class="frame">
+	<div class="triangle5"></div>
+</div>
+<div class="frame">
+	<div class="triangle6"></div>
+</div>
+<div class="frame">
+	<div class="triangle7"></div>
+</div>
+<div class="frame">
+	<div class="square"></div>
+</div>
+<div class="frame">
+	<div class="square2"></div>
+</div>
+<div class="frame">
+	<div class="square3"></div>
+</div>
+<div class="frame">
+	<div class="square4"></div>
+</div>
+<div class="frame">
+	<div class="square5"></div>
+</div>
+<div class="frame">
+	<div class="square6"></div>
+</div>
+<div class="frame">
+	<div class="square7"></div>
+</div>
+<div class="frame">
+	<div class="pentagon"></div>
+</div>
+<div class="frame">
+	<div class="hexagon"></div>
+</div>
+<div class="frame">
+	<div class="octagon"></div>
+</div>
+<div class="frame">
+	<div class="circle"></div>
+</div>
+<div class="frame">
+	<div class="circle2"></div>
+</div>
+<div class="frame">
+	<div class="circle3"></div>
+</div>
+<div class="frame">
+	<div class="circle4"></div>
+</div>
+<div class="frame">
+	<div class="circle5"></div>
+</div>
+</body>
+</html>
